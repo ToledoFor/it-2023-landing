@@ -1,5 +1,23 @@
 console.log('Hello from "landing" page!')
 
+$(document).ready(function(){
+    const $slider = $('#slick').slick({
+        // autoplay: true,
+        slidesToShow: 4,
+        arrows: false,
+    });
+
+    $('.slider-prev').on('click', function(e){
+        e.preventDefault();
+        $slider.slick('slickPrev');
+    })
+
+    $('.slider-next').on('click', function(e){
+        e.preventDefault();
+        $slider.slick('slickNext');
+    })
+});
+
 const var1 = 'test'
 const obj1 = {
     k1: 1,
