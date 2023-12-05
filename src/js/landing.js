@@ -1,4 +1,36 @@
+// import Swiper JS
+import Swiper from 'swiper';
+// import Swiper styles
+import 'swiper/css';
+
+document.addEventListener('DOMContentLoaded', () => {
+    const swiper = new Swiper('.swiper', {
+        slidesPerView: 4,
+    })
+
+    const navigation = document.querySelector('.swiper-buttons')
+    if (navigation) {
+        // {target: {dataset: {action}}}
+        navigation.addEventListener('click', ({target}) => {
+            // console.log(target)
+            // console.log(target.dataset.action)
+
+            switch (target.dataset.action) {
+                case 'prev':
+                    swiper.slidePrev()
+                    break;
+
+               case 'next':
+                    swiper.slideNext()
+                    break; 
+            }
+        })
+    }
+})
+
+
 console.log('Hello from "landing" page!')
+
 
 $(document).ready(function(){
     const $slider = $('#slick').slick({
